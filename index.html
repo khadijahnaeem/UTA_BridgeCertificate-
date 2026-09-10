@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UTA Bridge Engineering Certificate</title>
+
+    <style>
+
+        /* Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Raleway:wght@400;500;600;700;800&display=swap');
+
+
+        /* General */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Merriweather', Georgia, serif;
+            color: #252525;
+            line-height: 1.7;
+            background-color: white;
+        }
+
+        h1,
+        h2,
+        h3,
+        nav,
+        .button,
+        .eyebrow,
+        .stat-number,
+        .course-number {
+            font-family: 'Raleway', Arial, sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+
+        /* Colors */
+
+        :root {
+            --navy: #003b71;
+            --dark-navy: #002855;
+            --blue: #0064b1;
+            --light-blue: #e9f2f8;
+            --orange: #f58025;
+            --light-gray: #f6f7f8;
+            --gray: #666666;
+            --border: #d9dde1;
+        }
+
+
+        /* Header */
+
+        header {
+            background-color: white;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            min-height: 86px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .uta-mark {
+            font-family: 'Raleway', sans-serif;
+            font-size: 40px;
+            font-weight: 800;
+            letter-spacing: -2px;
+            color: var(--blue);
+            line-height: 1;
+        }
+
+        .brand-divider {
+            width: 1px;
+            height: 38px;
+            background-color: #c9c9c9;
+        }
+
+        .brand-text {
+            font-family: 'Raleway', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--dark-navy);
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            color: var(--dark-navy);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+
+        nav a:hover {
+            color: var(--orange);
+        }
+
+
+        /* Hero */
+
+        .hero {
+            background-color: var(--dark-navy);
+            color: white;
+            border-bottom: 6px solid var(--orange);
+        }
+
+        .hero-grid {
+            min-height: 610px;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            align-items: center;
+            gap: 70px;
+            padding: 75px 0;
+        }
+
+        .eyebrow {
+            color: #aed2ec;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+            max-width: 650px;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: #b9dbef;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            max-width: 620px;
+            color: #e1e9ef;
+            margin-top: 28px;
+            margin-bottom: 34px;
+            line-height: 1.8;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: var(--orange);
+            color: white;
+            padding: 14px 25px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.7px;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background-color: #dc6d1c;
+        }
+
+
+        /* Bridge image */
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image-frame {
+            background-color: white;
+            padding: 10px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.28);
+            max-width: 520px;
+            width: 100%;
+        }
+
+        .hero-image-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            font-family: 'Raleway', sans-serif;
+            color: #5b5b5b;
+            font-size: 11px;
+            text-align: center;
+            padding: 9px 5px 2px;
+            letter-spacing: 0.3px;
+        }
+
+
+        /* Program facts */
+
+        .facts {
+            background-color: white;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 38px 0;
+        }
+
+        .fact {
+            padding: 5px 38px;
+            border-right: 1px solid var(--border);
+        }
+
+        .fact:first-child {
+            padding-left: 0;
+        }
+
+        .fact:last-child {
+            border-right: none;
+        }
+
+        .fact h3 {
+            color: var(--navy);
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .fact p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.65;
+        }
+
+
+        /* General sections */
+
+        section.content-section {
+            padding: 90px 0;
+        }
+
+        .section-heading {
+            max-width: 750px;
+            margin-bottom: 45px;
+        }
+
+        .section-heading .eyebrow {
+            color: var(--orange);
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            color: var(--dark-navy);
+            font-size: 40px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .orange-line {
+            width: 55px;
+            height: 4px;
+            background-color: var(--orange);
+            margin-top: 20px;
+        }
+
+
+        /* About */
+
+        .about {
+            background-color: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .about-intro {
+            font-family: 'Raleway', sans-serif;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 1.5;
+        }
+
+        .about-copy p {
+            margin-bottom: 22px;
+            font-size: 16px;
+        }
+
+
+        /* Courses */
+
+        .courses {
+            background-color: var(--light-gray);
+        }
+
+        .course-list {
+            border-top: 2px solid var(--dark-navy);
+        }
+
+        .course-item {
+            display: grid;
+            grid-template-columns: 65px 1fr;
+            align-items: center;
+            padding: 20px 15px;
+            border-bottom: 1px solid #ccd2d7;
+            transition: 0.2s ease;
+        }
+
+        .course-item:hover {
+            background-color: white;
+            padding-left: 22px;
+        }
+
+        .course-number {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--orange);
+            letter-spacing: 1px;
+        }
+
+        .course-name {
+            font-family: 'Raleway', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--dark-navy);
+        }
+
+
+        /* Schedule */
+
+        .schedule {
+            background-color: var(--navy);
+            color: white;
+        }
+
+        .schedule .section-heading h2 {
+            color: white;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 45px;
+            border-top: 1px solid rgba(255,255,255,0.25);
+            border-bottom: 1px solid rgba(255,255,255,0.25);
+        }
+
+        .schedule-item {
+            padding: 32px 35px;
+            border-right: 1px solid rgba(255,255,255,0.25);
+        }
+
+        .schedule-item:first-child {
+            padding-left: 0;
+        }
+
+        .schedule-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            color: #cce5f5;
+            font-size: 32px;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .schedule-item p {
+            font-size: 14px;
+            color: #e4edf3;
+        }
+
+
+        /* Contact */
+
+        .contact {
+            background-color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .contact-details {
+            border-left: 4px solid var(--orange);
+            padding-left: 28px;
+        }
+
+        .contact-row {
+            margin-bottom: 20px;
+        }
+
+        .contact-label {
+            display: block;
+            font-family: 'Raleway', sans-serif;
+            text-transform: uppercase;
+            color: #777;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            margin-bottom: 3px;
+        }
+
+        .contact-value {
+            color: var(--navy);
+            font-size: 17px;
+            text-decoration: none;
+        }
+
+        .contact-value:hover {
+            color: var(--orange);
+        }
+
+
+        /* Footer */
+
+        footer {
+            background-color: #001f3d;
+            color: #c9d5df;
+            padding: 30px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Raleway', sans-serif;
+            font-size: 12px;
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 850px) {
+
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px 0;
+                gap: 20px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 18px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 46px;
+            }
+
+            .hero-image {
+                justify-content: flex-start;
+            }
+
+            .hero-image-frame {
+                max-width: 330px;
+            }
+
+            .facts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fact {
+                padding: 25px 0;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .fact:last-child {
+                border-bottom: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .schedule-item {
+                padding: 25px 0;
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.25);
+            }
+
+            .schedule-item:last-child {
+                border-bottom: none;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+
+
+        @media (max-width: 520px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .section-heading h2 {
+                font-size: 32px;
+            }
+
+            .brand-divider,
+            .brand-text {
+                display: none;
+            }
+
+            .course-item {
+                grid-template-columns: 45px 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="container header-inner">
+
+            <div class="brand">
+
+                <div class="uta-mark">
+                    UTA
+                </div>
+
+                <div class="brand-divider"></div>
+
+                <div class="brand-text">
+                    Department of<br>
+                    Civil Engineering
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#courses">
+                    Courses
+                </a>
+
+                <a href="#schedule">
+                    Program
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <div class="container hero-grid">
+
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    UTA Certificate in
+                </div>
+
+                <h1>
+                    Bridging the Gap
+
+                    <span>
+                        Bridge Engineering
+                    </span>
+                </h1>
+
+                <p class="hero-description">
+
+                    Specialized bridge engineering education designed
+                    to connect academic preparation with the practical
+                    demands of professional engineering.
+
+                </p>
+
+                <a href="#courses" class="button">
+                    View Course Offerings
+                </a>
+
+            </div>
+
+
+
+            <div class="hero-image">
+
+                <div class="hero-image-frame">
+
+                    <img
+                        src="bridge.jpeg"
+                        alt="UTA Bridge Engineering Certificate flyer">
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Program Highlights -->
+
+    <section class="facts">
+
+        <div class="container facts-grid">
+
+
+            <div class="fact">
+
+                <h3>
+                    Industry Focused
+                </h3>
+
+                <p>
+                    Practical bridge engineering knowledge that
+                    extends beyond traditional engineering curricula.
+                </p>
+
+            </div>
+
+
+
+            <div class="fact">
+
+                <h3>
+                    Flexible Format
+                </h3>
+
+                <p>
+                    Weekend instruction designed around the schedules
+                    of working engineering professionals.
+                </p>
+
+            </div>
+
+
+
+            <div class="fact">
+
+                <h3>
+                    Professional Development
+                </h3>
+
+                <p>
+                    Earn professional development hours while building
+                    specialized bridge engineering expertise.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- About -->
+
+    <section id="about" class="content-section about">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="eyebrow">
+                    About the Certificate
+                </div>
+
+                <h2>
+                    Preparing Engineers for the Bridge Industry
+                </h2>
+
+                <div class="orange-line"></div>
+
+            </div>
+
+
+            <div class="about-grid">
+
+
+                <div class="about-intro">
+
+                    Specialized education for engineers entering or
+                    advancing within the bridge engineering profession.
+
+                </div>
+
+
+                <div class="about-copy">
+
+                    <p>
+                        UTA offers the only Bridge Engineering Certificate
+                        in Texas, providing engineers with specialized
+                        knowledge for careers in State Departments of
+                        Transportation, public agencies, and private
+                        consulting firms.
+                    </p>
+
+                    <p>
+                        The program emphasizes practical engineering
+                        knowledge and professional applications so that
+                        participants can develop skills that can be used
+                        directly in bridge design, analysis, inspection,
+                        construction, and asset management.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Courses -->
+
+    <section id="courses" class="content-section courses">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="eyebrow">
+                    Curriculum
+                </div>
+
+                <h2>
+                    Course Offerings
+                </h2>
+
+                <div class="orange-line"></div>
+
+            </div>
+
+
+            <div class="course-list">
+
+
+                <div class="course-item">
+                    <div class="course-number">01</div>
+                    <div class="course-name">
+                        Design of Concrete Bridges
+                    </div>
+                </div>
+
+
+                <div class="course-item">
+                    <div class="course-number">02</div>
+                    <div class="course-name">
+                        Design of Steel Bridges
+                    </div>
+                </div>
+
+
+                <div class="course-item">
+                    <div class="course-number">03</div>
+                    <div class="course-name">
+                        Bridge Substructures
+                    </div>
+                </div>
+
+
+                <div class="course-item">
+                    <div class="course-number">04</div>
+                    <div class="course-name">
+                        Bridge Software
+                    </div>
+                </div>
+
+
+                <div class="course-item">
+                    <div class="course-number">05</div>
+                    <div class="course-name">
+                        Design of Railroad Bridges
+                    </div>
+                </div>
+
+
+                <div class="course-item">
+                    <div class="course-number">06</div>
+                    <div class="course-name">
+                        Bridge Geometry, Fit, and BIM
+                    </div>
+                </div>
+
+
+                <div class="course-item">
+                    <div class="course-number">07</div>
+                    <div class="course-name">
+                        Numerical Modeling and Analysis for Bridges
+                    </div>
+                </div>
+
+
+                <div class="course-item">
+                    <div class="course-number">08</div>
+                    <div class="course-name">
+                        Bridge Inspection, Evaluation, and Asset Management
+                    </div>
+                </div>
+
+
+                <div class="course-item">
+                    <div class="course-number">09</div>
+                    <div class="course-name">
+                        Bridge Constructability, Phasing, and Detailing
+                    </div>
+                </div>
+
+
+                <div class="course-item">
+                    <div class="course-number">10</div>
+                    <div class="course-name">
+                        Non-Destructive Evaluation & Structural Health Monitoring
+                    </div>
+                </div>
+
+
+                <div class="course-item">
+                    <div class="course-number">11</div>
+                    <div class="course-name">
+                        Complex Bridge Design
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Schedule / Certificate -->
+
+    <section id="schedule" class="content-section schedule">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="eyebrow">
+                    Program Format
+                </div>
+
+                <h2>
+                    Designed for Working Professionals
+                </h2>
+
+                <div class="orange-line"></div>
+
+            </div>
+
+
+            <div class="schedule-grid">
+
+
+                <div class="schedule-item">
+
+                    <span class="stat-number">
+                        6
+                    </span>
+
+                    <p>
+                        Courses required to complete the certificate.
+                    </p>
+
+                </div>
+
+
+
+                <div class="schedule-item">
+
+                    <span class="stat-number">
+                        Saturdays
+                    </span>
+
+                    <p>
+                        Weekend classes held on six consecutive Saturdays.
+                    </p>
+
+                </div>
+
+
+
+                <div class="schedule-item">
+
+                    <span class="stat-number">
+                        8 PDH
+                    </span>
+
+                    <p>
+                        Professional development hours available for
+                        each completed course.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Contact -->
+
+    <section id="contact" class="content-section contact">
+
+        <div class="container">
+
+
+            <div class="contact-grid">
+
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        Get in Touch
+                    </div>
+
+                    <h2>
+                        Connect With the Department
+                    </h2>
+
+                    <div class="orange-line"></div>
+
+                </div>
+
+
+
+                <div class="contact-details">
+
+
+                    <div class="contact-row">
+
+                        <span class="contact-label">
+                            Phone
+                        </span>
+
+                        <a
+                            class="contact-value"
+                            href="tel:8172725055">
+
+                            817-272-5055
+
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="contact-row">
+
+                        <span class="contact-label">
+                            Website
+                        </span>
+
+                        <a
+                            class="contact-value"
+                            href="https://www.uta.edu/ce"
+                            target="_blank">
+
+                            www.uta.edu/ce
+
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="contact-row">
+
+                        <span class="contact-label">
+                            Email
+                        </span>
+
+                        <a
+                            class="contact-value"
+                            href="mailto:yazdani@uta.edu">
+
+                            yazdani@uta.edu
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <div>
+                The University of Texas at Arlington
+            </div>
+
+            <div>
+                Department of Civil Engineering
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
