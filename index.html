@@ -3,18 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>UTA Bridge Engineering Certificate</title>
 
     <style>
-
-        /* Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Raleway:wght@400;500;600;700;800&display=swap');
-
-
-        /* General */
 
         * {
             margin: 0;
@@ -31,6 +25,17 @@
             color: #252525;
             line-height: 1.7;
             background-color: white;
+        }
+
+        :root {
+            --navy: #003b71;
+            --dark-navy: #002855;
+            --blue: #0064b1;
+            --light-blue: #e9f2f8;
+            --orange: #f58025;
+            --light-gray: #f6f7f8;
+            --gray: #666666;
+            --border: #d9dde1;
         }
 
         h1,
@@ -51,25 +56,13 @@
         }
 
 
-        /* Colors */
-
-        :root {
-            --navy: #003b71;
-            --dark-navy: #002855;
-            --blue: #0064b1;
-            --light-blue: #e9f2f8;
-            --orange: #f58025;
-            --light-gray: #f6f7f8;
-            --gray: #666666;
-            --border: #d9dde1;
-        }
-
-
-        /* Header */
+        /* HEADER */
 
         header {
             background-color: white;
             border-bottom: 1px solid var(--border);
+            position: relative;
+            z-index: 10;
         }
 
         .header-inner {
@@ -110,7 +103,8 @@
 
         nav {
             display: flex;
-            gap: 32px;
+            gap: 30px;
+            align-items: center;
         }
 
         nav a {
@@ -119,14 +113,33 @@
             font-size: 14px;
             font-weight: 700;
             letter-spacing: 0.4px;
+            cursor: pointer;
+            padding: 31px 0 27px;
+            border-bottom: 4px solid transparent;
         }
 
         nav a:hover {
             color: var(--orange);
         }
 
+        nav a.active {
+            color: var(--orange);
+            border-bottom-color: var(--orange);
+        }
 
-        /* Hero */
+
+        /* PAGE TABS */
+
+        .page-view {
+            display: none;
+        }
+
+        .page-view.active {
+            display: block;
+        }
+
+
+        /* HERO */
 
         .hero {
             background-color: var(--dark-navy);
@@ -186,6 +199,8 @@
             font-weight: 700;
             letter-spacing: 0.7px;
             text-transform: uppercase;
+            border: none;
+            cursor: pointer;
         }
 
         .button:hover {
@@ -193,7 +208,7 @@
         }
 
 
-        /* Bridge image */
+        /* HERO IMAGE */
 
         .hero-image {
             display: flex;
@@ -214,17 +229,8 @@
             display: block;
         }
 
-        .image-caption {
-            font-family: 'Raleway', sans-serif;
-            color: #5b5b5b;
-            font-size: 11px;
-            text-align: center;
-            padding: 9px 5px 2px;
-            letter-spacing: 0.3px;
-        }
 
-
-        /* Program facts */
+        /* PROGRAM HIGHLIGHTS */
 
         .facts {
             background-color: white;
@@ -266,7 +272,7 @@
         }
 
 
-        /* General sections */
+        /* GENERAL SECTIONS */
 
         section.content-section {
             padding: 90px 0;
@@ -297,7 +303,7 @@
         }
 
 
-        /* About */
+        /* ABOUT */
 
         .about {
             background-color: white;
@@ -324,10 +330,11 @@
         }
 
 
-        /* Courses */
+        /* COURSES PAGE */
 
         .courses {
             background-color: var(--light-gray);
+            min-height: 650px;
         }
 
         .course-list {
@@ -363,7 +370,73 @@
         }
 
 
-        /* Schedule */
+        /* FACULTY PAGE */
+
+        .faculty {
+            background-color: white;
+            min-height: 650px;
+        }
+
+        .faculty-intro {
+            max-width: 700px;
+            margin-bottom: 45px;
+            color: #555;
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .faculty-card {
+            border: 1px solid var(--border);
+            background-color: white;
+            padding: 30px;
+            border-top: 4px solid var(--orange);
+        }
+
+        .faculty-card h3 {
+            color: var(--dark-navy);
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .faculty-title {
+            font-family: 'Raleway', sans-serif;
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .faculty-course {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .faculty-label {
+            display: block;
+            font-family: 'Raleway', sans-serif;
+            text-transform: uppercase;
+            font-size: 10px;
+            color: #888;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .faculty-placeholder {
+            border: 1px dashed #aeb7bf;
+            background-color: var(--light-gray);
+            padding: 45px;
+            text-align: center;
+            color: #666;
+            font-family: 'Raleway', sans-serif;
+        }
+
+
+        /* PROGRAM */
 
         .schedule {
             background-color: var(--navy);
@@ -378,13 +451,13 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             margin-top: 45px;
-            border-top: 1px solid rgba(255,255,255,0.25);
-            border-bottom: 1px solid rgba(255,255,255,0.25);
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
         }
 
         .schedule-item {
             padding: 32px 35px;
-            border-right: 1px solid rgba(255,255,255,0.25);
+            border-right: 1px solid rgba(255, 255, 255, 0.25);
         }
 
         .schedule-item:first-child {
@@ -409,7 +482,7 @@
         }
 
 
-        /* Contact */
+        /* CONTACT */
 
         .contact {
             background-color: white;
@@ -452,7 +525,7 @@
         }
 
 
-        /* Footer */
+        /* FOOTER */
 
         footer {
             background-color: #001f3d;
@@ -469,20 +542,23 @@
         }
 
 
-        /* Mobile */
+        /* MOBILE */
 
         @media (max-width: 850px) {
-
             .header-inner {
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 20px 0;
-                gap: 20px;
+                padding: 20px 0 0;
+                gap: 15px;
             }
 
             nav {
                 flex-wrap: wrap;
-                gap: 18px;
+                gap: 20px;
+            }
+
+            nav a {
+                padding: 10px 0;
             }
 
             .hero-grid {
@@ -529,7 +605,7 @@
             .schedule-item {
                 padding: 25px 0;
                 border-right: none;
-                border-bottom: 1px solid rgba(255,255,255,0.25);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
             }
 
             .schedule-item:last-child {
@@ -541,6 +617,10 @@
                 gap: 40px;
             }
 
+            .faculty-grid {
+                grid-template-columns: 1fr;
+            }
+
             .footer-inner {
                 flex-direction: column;
                 align-items: flex-start;
@@ -548,9 +628,7 @@
             }
         }
 
-
         @media (max-width: 520px) {
-
             .hero h1 {
                 font-size: 38px;
             }
@@ -568,25 +646,19 @@
                 grid-template-columns: 45px 1fr;
             }
         }
-
     </style>
 </head>
 
 
 <body>
 
-
-    <!-- Header -->
+    <!-- HEADER -->
 
     <header>
-
         <div class="container header-inner">
 
             <div class="brand">
-
-                <div class="uta-mark">
-                    UTA
-                </div>
+                <div class="uta-mark">UTA</div>
 
                 <div class="brand-divider"></div>
 
@@ -594,500 +666,542 @@
                     Department of<br>
                     Civil Engineering
                 </div>
-
             </div>
 
 
             <nav>
-
-                <a href="#about">
-                    About
+                <a href="#home"
+                   class="tab-link active"
+                   data-tab="home">
+                    Home
                 </a>
 
-                <a href="#courses">
+                <a href="#courses"
+                   class="tab-link"
+                   data-tab="courses">
                     Courses
                 </a>
 
-                <a href="#schedule">
+                <a href="#faculty"
+                   class="tab-link"
+                   data-tab="faculty">
+                    Faculty
+                </a>
+
+                <a href="#schedule"
+                   class="home-link">
                     Program
                 </a>
 
-                <a href="#contact">
+                <a href="#contact"
+                   class="home-link">
                     Contact
                 </a>
-
             </nav>
 
         </div>
-
     </header>
 
 
+    <main>
 
-    <!-- Hero -->
+        <!-- =============================== -->
+        <!-- HOME PAGE -->
+        <!-- =============================== -->
 
-    <section class="hero">
+        <div class="page-view active" data-page="home">
 
-        <div class="container hero-grid">
+            <!-- HERO -->
 
+            <section class="hero">
 
-            <div class="hero-content">
+                <div class="container hero-grid">
 
-                <div class="eyebrow">
-                    UTA Certificate in
-                </div>
+                    <div class="hero-content">
 
-                <h1>
-                    Bridging the Gap
+                        <div class="eyebrow">
+                            UTA Certificate in
+                        </div>
 
-                    <span>
-                        Bridge Engineering
-                    </span>
-                </h1>
+                        <h1>
+                            Bridging the Gap
 
-                <p class="hero-description">
+                            <span>
+                                Bridge Engineering
+                            </span>
+                        </h1>
 
-                    Specialized bridge engineering education designed
-                    to connect academic preparation with the practical
-                    demands of professional engineering.
+                        <p class="hero-description">
+                            Specialized bridge engineering education designed
+                            to connect academic preparation with the practical
+                            demands of professional engineering.
+                        </p>
 
-                </p>
-
-                <a href="#courses" class="button">
-                    View Course Offerings
-                </a>
-
-            </div>
-
-
-
-            <div class="hero-image">
-
-                <div class="hero-image-frame">
-
-                    <img
-                        src="bridge.jpeg"
-                        alt="UTA Bridge Engineering Certificate flyer">
-
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- Program Highlights -->
-
-    <section class="facts">
-
-        <div class="container facts-grid">
-
-
-            <div class="fact">
-
-                <h3>
-                    Industry Focused
-                </h3>
-
-                <p>
-                    Practical bridge engineering knowledge that
-                    extends beyond traditional engineering curricula.
-                </p>
-
-            </div>
-
-
-
-            <div class="fact">
-
-                <h3>
-                    Flexible Format
-                </h3>
-
-                <p>
-                    Weekend instruction designed around the schedules
-                    of working engineering professionals.
-                </p>
-
-            </div>
-
-
-
-            <div class="fact">
-
-                <h3>
-                    Professional Development
-                </h3>
-
-                <p>
-                    Earn professional development hours while building
-                    specialized bridge engineering expertise.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- About -->
-
-    <section id="about" class="content-section about">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <div class="eyebrow">
-                    About the Certificate
-                </div>
-
-                <h2>
-                    Preparing Engineers for the Bridge Industry
-                </h2>
-
-                <div class="orange-line"></div>
-
-            </div>
-
-
-            <div class="about-grid">
-
-
-                <div class="about-intro">
-
-                    Specialized education for engineers entering or
-                    advancing within the bridge engineering profession.
-
-                </div>
-
-
-                <div class="about-copy">
-
-                    <p>
-                        UTA offers the only Bridge Engineering Certificate
-                        in Texas, providing engineers with specialized
-                        knowledge for careers in State Departments of
-                        Transportation, public agencies, and private
-                        consulting firms.
-                    </p>
-
-                    <p>
-                        The program emphasizes practical engineering
-                        knowledge and professional applications so that
-                        participants can develop skills that can be used
-                        directly in bridge design, analysis, inspection,
-                        construction, and asset management.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- Courses -->
-
-    <section id="courses" class="content-section courses">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <div class="eyebrow">
-                    Curriculum
-                </div>
-
-                <h2>
-                    Course Offerings
-                </h2>
-
-                <div class="orange-line"></div>
-
-            </div>
-
-
-            <div class="course-list">
-
-
-                <div class="course-item">
-                    <div class="course-number">01</div>
-                    <div class="course-name">
-                        Design of Concrete Bridges
-                    </div>
-                </div>
-
-
-                <div class="course-item">
-                    <div class="course-number">02</div>
-                    <div class="course-name">
-                        Design of Steel Bridges
-                    </div>
-                </div>
-
-
-                <div class="course-item">
-                    <div class="course-number">03</div>
-                    <div class="course-name">
-                        Bridge Substructures
-                    </div>
-                </div>
-
-
-                <div class="course-item">
-                    <div class="course-number">04</div>
-                    <div class="course-name">
-                        Bridge Software
-                    </div>
-                </div>
-
-
-                <div class="course-item">
-                    <div class="course-number">05</div>
-                    <div class="course-name">
-                        Design of Railroad Bridges
-                    </div>
-                </div>
-
-
-                <div class="course-item">
-                    <div class="course-number">06</div>
-                    <div class="course-name">
-                        Bridge Geometry, Fit, and BIM
-                    </div>
-                </div>
-
-
-                <div class="course-item">
-                    <div class="course-number">07</div>
-                    <div class="course-name">
-                        Numerical Modeling and Analysis for Bridges
-                    </div>
-                </div>
-
-
-                <div class="course-item">
-                    <div class="course-number">08</div>
-                    <div class="course-name">
-                        Bridge Inspection, Evaluation, and Asset Management
-                    </div>
-                </div>
-
-
-                <div class="course-item">
-                    <div class="course-number">09</div>
-                    <div class="course-name">
-                        Bridge Constructability, Phasing, and Detailing
-                    </div>
-                </div>
-
-
-                <div class="course-item">
-                    <div class="course-number">10</div>
-                    <div class="course-name">
-                        Non-Destructive Evaluation & Structural Health Monitoring
-                    </div>
-                </div>
-
-
-                <div class="course-item">
-                    <div class="course-number">11</div>
-                    <div class="course-name">
-                        Complex Bridge Design
-                    </div>
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- Schedule / Certificate -->
-
-    <section id="schedule" class="content-section schedule">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <div class="eyebrow">
-                    Program Format
-                </div>
-
-                <h2>
-                    Designed for Working Professionals
-                </h2>
-
-                <div class="orange-line"></div>
-
-            </div>
-
-
-            <div class="schedule-grid">
-
-
-                <div class="schedule-item">
-
-                    <span class="stat-number">
-                        6
-                    </span>
-
-                    <p>
-                        Courses required to complete the certificate.
-                    </p>
-
-                </div>
-
-
-
-                <div class="schedule-item">
-
-                    <span class="stat-number">
-                        Saturdays
-                    </span>
-
-                    <p>
-                        Weekend classes held on six consecutive Saturdays.
-                    </p>
-
-                </div>
-
-
-
-                <div class="schedule-item">
-
-                    <span class="stat-number">
-                        8 PDH
-                    </span>
-
-                    <p>
-                        Professional development hours available for
-                        each completed course.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- Contact -->
-
-    <section id="contact" class="content-section contact">
-
-        <div class="container">
-
-
-            <div class="contact-grid">
-
-
-                <div class="section-heading">
-
-                    <div class="eyebrow">
-                        Get in Touch
-                    </div>
-
-                    <h2>
-                        Connect With the Department
-                    </h2>
-
-                    <div class="orange-line"></div>
-
-                </div>
-
-
-
-                <div class="contact-details">
-
-
-                    <div class="contact-row">
-
-                        <span class="contact-label">
-                            Phone
-                        </span>
-
-                        <a
-                            class="contact-value"
-                            href="tel:8172725055">
-
-                            817-272-5055
-
+                        <a href="#courses"
+                           class="button tab-link"
+                           data-tab="courses">
+                            View Course Offerings
                         </a>
 
                     </div>
 
 
+                    <div class="hero-image">
 
-                    <div class="contact-row">
+                        <div class="hero-image-frame">
 
-                        <span class="contact-label">
-                            Website
-                        </span>
+                            <img
+                                src="bridge.jpg"
+                                alt="UTA Bridge Engineering Certificate flyer">
 
-                        <a
-                            class="contact-value"
-                            href="https://www.uta.edu/ce"
-                            target="_blank">
-
-                            www.uta.edu/ce
-
-                        </a>
+                        </div>
 
                     </div>
-
-
-
-                    <div class="contact-row">
-
-                        <span class="contact-label">
-                            Email
-                        </span>
-
-                        <a
-                            class="contact-value"
-                            href="mailto:yazdani@uta.edu">
-
-                            yazdani@uta.edu
-
-                        </a>
-
-                    </div>
-
 
                 </div>
 
+            </section>
 
-            </div>
+
+            <!-- PROGRAM HIGHLIGHTS -->
+
+            <section class="facts">
+
+                <div class="container facts-grid">
+
+                    <div class="fact">
+
+                        <h3>
+                            Industry Focused
+                        </h3>
+
+                        <p>
+                            Practical bridge engineering knowledge that
+                            extends beyond traditional engineering curricula.
+                        </p>
+
+                    </div>
+
+
+                    <div class="fact">
+
+                        <h3>
+                            Flexible Format
+                        </h3>
+
+                        <p>
+                            Weekend instruction designed around the schedules
+                            of working engineering professionals.
+                        </p>
+
+                    </div>
+
+
+                    <div class="fact">
+
+                        <h3>
+                            Professional Development
+                        </h3>
+
+                        <p>
+                            Earn professional development hours while building
+                            specialized bridge engineering expertise.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ABOUT -->
+
+            <section id="about" class="content-section about">
+
+                <div class="container">
+
+                    <div class="section-heading">
+
+                        <div class="eyebrow">
+                            About the Certificate
+                        </div>
+
+                        <h2>
+                            Preparing Engineers for the Bridge Industry
+                        </h2>
+
+                        <div class="orange-line"></div>
+
+                    </div>
+
+
+                    <div class="about-grid">
+
+                        <div class="about-intro">
+                            Specialized education for engineers entering or
+                            advancing within the bridge engineering profession.
+                        </div>
+
+
+                        <div class="about-copy">
+
+                            <p>
+                                UTA offers the only Bridge Engineering Certificate
+                                in Texas, providing engineers with specialized
+                                knowledge for careers in State Departments of
+                                Transportation, public agencies, and private
+                                consulting firms.
+                            </p>
+
+                            <p>
+                                The program emphasizes practical engineering
+                                knowledge and professional applications so that
+                                participants can develop skills that can be used
+                                directly in bridge design, analysis, inspection,
+                                construction, and asset management.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PROGRAM -->
+
+            <section id="schedule" class="content-section schedule">
+
+                <div class="container">
+
+                    <div class="section-heading">
+
+                        <div class="eyebrow">
+                            Program Format
+                        </div>
+
+                        <h2>
+                            Designed for Working Professionals
+                        </h2>
+
+                        <div class="orange-line"></div>
+
+                    </div>
+
+
+                    <div class="schedule-grid">
+
+                        <div class="schedule-item">
+
+                            <span class="stat-number">
+                                6
+                            </span>
+
+                            <p>
+                                Courses required to complete the certificate.
+                            </p>
+
+                        </div>
+
+
+                        <div class="schedule-item">
+
+                            <span class="stat-number">
+                                Saturdays
+                            </span>
+
+                            <p>
+                                Weekend classes held on six consecutive Saturdays.
+                            </p>
+
+                        </div>
+
+
+                        <div class="schedule-item">
+
+                            <span class="stat-number">
+                                8 PDH
+                            </span>
+
+                            <p>
+                                Professional development hours available for
+                                each completed course.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONTACT -->
+
+            <section id="contact" class="content-section contact">
+
+                <div class="container">
+
+                    <div class="contact-grid">
+
+                        <div class="section-heading">
+
+                            <div class="eyebrow">
+                                Get in Touch
+                            </div>
+
+                            <h2>
+                                Connect With the Department
+                            </h2>
+
+                            <div class="orange-line"></div>
+
+                        </div>
+
+
+                        <div class="contact-details">
+
+                            <div class="contact-row">
+
+                                <span class="contact-label">
+                                    Phone
+                                </span>
+
+                                <a
+                                    class="contact-value"
+                                    href="tel:8172725055">
+                                    817-272-5055
+                                </a>
+
+                            </div>
+
+
+                            <div class="contact-row">
+
+                                <span class="contact-label">
+                                    Website
+                                </span>
+
+                                <a
+                                    class="contact-value"
+                                    href="https://www.uta.edu/ce"
+                                    target="_blank">
+                                    www.uta.edu/ce
+                                </a>
+
+                            </div>
+
+
+                            <div class="contact-row">
+
+                                <span class="contact-label">
+                                    Email
+                                </span>
+
+                                <a
+                                    class="contact-value"
+                                    href="mailto:yazdani@uta.edu">
+                                    yazdani@uta.edu
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
 
         </div>
 
-    </section>
+
+        <!-- =============================== -->
+        <!-- COURSES TAB -->
+        <!-- =============================== -->
+
+        <div id="courses"
+             class="page-view"
+             data-page="courses">
+
+            <section class="content-section courses">
+
+                <div class="container">
+
+                    <div class="section-heading">
+
+                        <div class="eyebrow">
+                            Curriculum
+                        </div>
+
+                        <h2>
+                            Course Offerings
+                        </h2>
+
+                        <div class="orange-line"></div>
+
+                    </div>
 
 
+                    <div class="course-list">
 
-    <!-- Footer -->
+                        <div class="course-item">
+                            <div class="course-number">01</div>
+                            <div class="course-name">
+                                Design of Concrete Bridges
+                            </div>
+                        </div>
+
+
+                        <div class="course-item">
+                            <div class="course-number">02</div>
+                            <div class="course-name">
+                                Design of Steel Bridges
+                            </div>
+                        </div>
+
+
+                        <div class="course-item">
+                            <div class="course-number">03</div>
+                            <div class="course-name">
+                                Bridge Substructures
+                            </div>
+                        </div>
+
+
+                        <div class="course-item">
+                            <div class="course-number">04</div>
+                            <div class="course-name">
+                                Bridge Software
+                            </div>
+                        </div>
+
+
+                        <div class="course-item">
+                            <div class="course-number">05</div>
+                            <div class="course-name">
+                                Design of Railroad Bridges
+                            </div>
+                        </div>
+
+
+                        <div class="course-item">
+                            <div class="course-number">06</div>
+                            <div class="course-name">
+                                Bridge Geometry, Fit, and BIM
+                            </div>
+                        </div>
+
+
+                        <div class="course-item">
+                            <div class="course-number">07</div>
+                            <div class="course-name">
+                                Numerical Modeling and Analysis for Bridges
+                            </div>
+                        </div>
+
+
+                        <div class="course-item">
+                            <div class="course-number">08</div>
+                            <div class="course-name">
+                                Bridge Inspection, Evaluation, and Asset Management
+                            </div>
+                        </div>
+
+
+                        <div class="course-item">
+                            <div class="course-number">09</div>
+                            <div class="course-name">
+                                Bridge Constructability, Phasing, and Detailing
+                            </div>
+                        </div>
+
+
+                        <div class="course-item">
+                            <div class="course-number">10</div>
+                            <div class="course-name">
+                                Non-Destructive Evaluation & Structural Health Monitoring
+                            </div>
+                        </div>
+
+
+                        <div class="course-item">
+                            <div class="course-number">11</div>
+                            <div class="course-name">
+                                Complex Bridge Design
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =============================== -->
+        <!-- FACULTY TAB -->
+        <!-- =============================== -->
+
+        <div id="faculty"
+             class="page-view"
+             data-page="faculty">
+
+            <section class="content-section faculty">
+
+                <div class="container">
+
+                    <div class="section-heading">
+
+                        <div class="eyebrow">
+                            Course Instructors
+                        </div>
+
+                        <h2>
+                            Faculty
+                        </h2>
+
+                        <div class="orange-line"></div>
+
+                    </div>
+
+
+                    <p class="faculty-intro">
+                        Meet the faculty members teaching courses in the
+                        UTA Bridge Engineering Certificate program.
+                    </p>
+
+
+                    <!--
+                        FACULTY GO HERE
+
+                        Once you have the faculty names, you can replace
+                        this placeholder with faculty cards.
+                    -->
+
+                    <div class="faculty-placeholder">
+
+                        Faculty profiles will be added here.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
 
     <footer>
 
@@ -1105,6 +1219,139 @@
 
     </footer>
 
+
+    <!-- TAB JAVASCRIPT -->
+
+    <script>
+
+        const pageViews = document.querySelectorAll('.page-view');
+        const tabLinks = document.querySelectorAll('.tab-link');
+        const homeLinks = document.querySelectorAll('.home-link');
+
+
+        function showPage(pageName, scrollTarget = null) {
+
+            pageViews.forEach(function(view) {
+
+                if (view.dataset.page === pageName) {
+                    view.classList.add('active');
+                } else {
+                    view.classList.remove('active');
+                }
+
+            });
+
+
+            document.querySelectorAll('nav .tab-link').forEach(function(link) {
+
+                if (link.dataset.tab === pageName) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+
+            });
+
+
+            if (scrollTarget) {
+
+                setTimeout(function() {
+
+                    const target = document.querySelector(scrollTarget);
+
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+
+                }, 50);
+
+            } else {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+
+            }
+
+        }
+
+
+        /* HOME / COURSES / FACULTY TABS */
+
+        tabLinks.forEach(function(link) {
+
+            link.addEventListener('click', function(event) {
+
+                event.preventDefault();
+
+                const pageName = link.dataset.tab;
+
+                showPage(pageName);
+
+                history.replaceState(
+                    null,
+                    '',
+                    '#' + pageName
+                );
+
+            });
+
+        });
+
+
+        /* PROGRAM / CONTACT LINKS */
+
+        homeLinks.forEach(function(link) {
+
+            link.addEventListener('click', function(event) {
+
+                event.preventDefault();
+
+                const target = link.getAttribute('href');
+
+                showPage('home', target);
+
+                history.replaceState(
+                    null,
+                    '',
+                    target
+                );
+
+            });
+
+        });
+
+
+        /* OPEN CORRECT TAB FROM URL */
+
+        const initialHash = window.location.hash.replace('#', '');
+
+        if (initialHash === 'courses') {
+
+            showPage('courses');
+
+        } else if (initialHash === 'faculty') {
+
+            showPage('faculty');
+
+        } else if (initialHash === 'schedule') {
+
+            showPage('home', '#schedule');
+
+        } else if (initialHash === 'contact') {
+
+            showPage('home', '#contact');
+
+        } else {
+
+            showPage('home');
+
+        }
+
+    </script>
 
 </body>
 
