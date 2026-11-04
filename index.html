@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>UTA Bridge Engineering Certificate</title>
+    <title>Bridging the Gap | UTA Certificate in Bridge Engineering</title>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Raleway:wght@400;500;600;700;800&display=swap');
@@ -176,8 +176,12 @@
         .hero h1 span {
             display: block;
             color: #b9dbef;
-            font-weight: 500;
-            margin-top: 8px;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.35;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 18px;
         }
 
         .hero-description {
@@ -337,35 +341,181 @@
             min-height: 650px;
         }
 
-        .course-list {
-            border-top: 2px solid var(--dark-navy);
+        .courses-summary {
+            font-size: 16px;
+            color: #555;
+            margin-top: 20px;
         }
 
-        .course-item {
-            display: grid;
-            grid-template-columns: 65px 1fr;
-            align-items: center;
-            padding: 20px 15px;
-            border-bottom: 1px solid #ccd2d7;
-            transition: 0.2s ease;
+        .course-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
         }
 
-        .course-item:hover {
+        .course-filter {
+            font-family: 'Raleway', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--dark-navy);
             background-color: white;
-            padding-left: 22px;
+            border: 1px solid #b9c2ca;
+            padding: 10px 18px;
+            cursor: pointer;
+        }
+
+        .course-filter:hover {
+            border-color: var(--orange);
+            color: #b4530c;
+        }
+
+        .course-filter.active {
+            background-color: var(--dark-navy);
+            border-color: var(--dark-navy);
+            color: white;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .course-card {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--blue);
+            padding: 28px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .course-card[hidden] {
+            display: none;
+        }
+
+        .course-card:hover {
+            transform: translateY(-4px);
+            border-top-color: var(--orange);
+            box-shadow: 0 12px 26px rgba(0, 40, 85, 0.13);
+        }
+
+        .course-card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 16px;
         }
 
         .course-number {
-            font-size: 13px;
-            font-weight: 700;
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1;
             color: var(--orange);
-            letter-spacing: 1px;
         }
 
-        .course-name {
+        .course-track {
             font-family: 'Raleway', sans-serif;
-            font-size: 17px;
-            font-weight: 600;
+            font-size: 10px;
+            font-weight: 700;
+            line-height: 1.4;
+            letter-spacing: 1px;
+            text-align: right;
+            text-transform: uppercase;
+            color: var(--blue);
+            padding-top: 4px;
+        }
+
+        .course-card h3 {
+            color: var(--dark-navy);
+            font-size: 19px;
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+
+        .course-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .course-card-summary {
+            background-color: var(--dark-navy);
+            border-color: var(--dark-navy);
+            border-top-color: var(--orange);
+            justify-content: center;
+        }
+
+        .course-card-summary:hover {
+            transform: none;
+            box-shadow: none;
+            border-top-color: var(--orange);
+        }
+
+        .course-card-summary h3 {
+            color: white;
+        }
+
+        .course-card-summary p {
+            color: #e1e9ef;
+        }
+
+
+        /* PROGRAM PAGE */
+
+        .program {
+            background-color: var(--light-gray);
+            min-height: 650px;
+        }
+
+        .program-intro {
+            max-width: 700px;
+            margin-bottom: 45px;
+            color: #555;
+        }
+
+        .firm-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .firm-card {
+            min-height: 170px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            text-align: center;
+            background-color: white;
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--orange);
+            padding: 26px 20px;
+        }
+
+        .firm-logo {
+            height: 64px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .firm-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+
+        .firm-name {
+            font-family: 'Raleway', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.35;
             color: var(--dark-navy);
         }
 
@@ -621,6 +771,14 @@
                 grid-template-columns: 1fr;
             }
 
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .firm-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .footer-inner {
                 flex-direction: column;
                 align-items: flex-start;
@@ -642,8 +800,21 @@
                 display: none;
             }
 
-            .course-item {
-                grid-template-columns: 45px 1fr;
+            .hero h1 span {
+                font-size: 17px;
+                letter-spacing: 1.5px;
+            }
+
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .firm-grid {
+                gap: 14px;
+            }
+
+            .firm-card {
+                padding: 22px 14px;
             }
         }
     </style>
@@ -688,8 +859,9 @@
                     Faculty
                 </a>
 
-                <a href="#schedule"
-                   class="home-link">
+                <a href="#program"
+                   class="tab-link"
+                   data-tab="program">
                     Program
                 </a>
 
@@ -719,15 +891,11 @@
 
                     <div class="hero-content">
 
-                        <div class="eyebrow">
-                            UTA Certificate in
-                        </div>
-
                         <h1>
                             Bridging the Gap
 
                             <span>
-                                Bridge Engineering
+                                UTA Certificate in Bridge Engineering
                             </span>
                         </h1>
 
@@ -1045,96 +1213,231 @@
 
                         <div class="orange-line"></div>
 
+                    <p class="courses-summary">
+                            11 courses offered. 6 courses required to complete the certificate.
+                        </p>
+
                     </div>
 
 
-                    <div class="course-list">
+                    <div class="course-filters" aria-label="Filter courses by topic">
+                        <button type="button" class="course-filter active" data-filter="all" aria-pressed="true">All Courses</button>
+                        <button type="button" class="course-filter" data-filter="design" aria-pressed="false">Design</button>
+                        <button type="button" class="course-filter" data-filter="analysis" aria-pressed="false">Analysis &amp; Digital Tools</button>
+                        <button type="button" class="course-filter" data-filter="field" aria-pressed="false">Field &amp; Lifecycle</button>
+                    </div>
 
-                        <div class="course-item">
-                            <div class="course-number">01</div>
-                            <div class="course-name">
-                                Design of Concrete Bridges
+
+                    <div class="course-grid">
+
+                        <article class="course-card" data-track="design">
+                            <div class="course-card-top">
+                                <div class="course-number">01</div>
+                                <div class="course-track">Design</div>
                             </div>
+                            <h3>Design of Concrete Bridges</h3>
+                            <p>Introduces the design of prestressed and reinforced concrete superstructures in accordance with AASHTO LRFD Bridge Design Specifications.</p>
+                        </article>
+
+                        <article class="course-card" data-track="design">
+                            <div class="course-card-top">
+                                <div class="course-number">02</div>
+                                <div class="course-track">Design</div>
+                            </div>
+                            <h3>Design of Steel Bridges</h3>
+                            <p>Covers the structural design of steel plate girder and rolled beam bridges per the AASHTO LRFD Bridge Design Specifications.</p>
+                        </article>
+
+                        <article class="course-card" data-track="design">
+                            <div class="course-card-top">
+                                <div class="course-number">03</div>
+                                <div class="course-track">Design</div>
+                            </div>
+                            <h3>Bridge Substructures</h3>
+                            <p>Addresses the analysis and design of bridge foundations and supporting structures.</p>
+                        </article>
+
+                        <article class="course-card" data-track="analysis">
+                            <div class="course-card-top">
+                                <div class="course-number">04</div>
+                                <div class="course-track">Analysis &amp; Digital Tools</div>
+                            </div>
+                            <h3>Bridge Software</h3>
+                            <p>Provides applied training in industry-standard bridge engineering software suites. Students utilize various software and standard Excel VBA macros for automated design, load rating, and structural analysis.</p>
+                        </article>
+
+                        <article class="course-card" data-track="design">
+                            <div class="course-card-top">
+                                <div class="course-number">05</div>
+                                <div class="course-track">Design</div>
+                            </div>
+                            <h3>Design of Railroad Bridges</h3>
+                            <p>Introduces the specific design criteria and structural behaviors unique to light rail and heavy rail transit bridges, guided by the AREMA Manual for Railway Engineering.</p>
+                        </article>
+
+                        <article class="course-card" data-track="analysis">
+                            <div class="course-card-top">
+                                <div class="course-number">06</div>
+                                <div class="course-track">Analysis &amp; Digital Tools</div>
+                            </div>
+                            <h3>Bridge Geometry, Fit, and BIM</h3>
+                            <p>Integrates roadway geometry with 3D Digital Bridge Modeling (BrIM).</p>
+                        </article>
+
+                        <article class="course-card" data-track="analysis">
+                            <div class="course-card-top">
+                                <div class="course-number">07</div>
+                                <div class="course-track">Analysis &amp; Digital Tools</div>
+                            </div>
+                            <h3>Numerical Modeling and Analysis for Bridges</h3>
+                            <p>Explores advanced finite element analysis (FEA) techniques for complex structural evaluation.</p>
+                        </article>
+
+                        <article class="course-card" data-track="field">
+                            <div class="course-card-top">
+                                <div class="course-number">08</div>
+                                <div class="course-track">Field &amp; Lifecycle</div>
+                            </div>
+                            <h3>Bridge Inspection, Evaluation, and Asset Management</h3>
+                            <p>Details condition assessment protocols, diagnostic load testing evaluations, and the integration of inspection data into GIS-based databases for lifecycle asset management, vulnerability assessments, and strategic rehabilitation planning.</p>
+                        </article>
+
+                        <article class="course-card" data-track="field">
+                            <div class="course-card-top">
+                                <div class="course-number">09</div>
+                                <div class="course-track">Field &amp; Lifecycle</div>
+                            </div>
+                            <h3>Bridge Constructability, Phasing, and Detailing</h3>
+                            <p>Focuses on the practical execution of bridge projects in the field. Topics include maintenance of traffic, staged construction sequencing, temporary works design, and the rigorous quality control of standard bridge sheets and layouts.</p>
+                        </article>
+
+                        <article class="course-card" data-track="field">
+                            <div class="course-card-top">
+                                <div class="course-number">10</div>
+                                <div class="course-track">Field &amp; Lifecycle</div>
+                            </div>
+                            <h3>Non-Destructive Evaluation &amp; Structural Health Monitoring</h3>
+                            <p>Covers the deployment of modern NDE technologies and sensor networks for condition assessment.</p>
+                        </article>
+
+                        <article class="course-card" data-track="design">
+                            <div class="course-card-top">
+                                <div class="course-number">11</div>
+                                <div class="course-track">Design</div>
+                            </div>
+                            <h3>Complex Bridge Design</h3>
+                            <p>Addresses the design and analysis of non-standard and highly constrained bridge configurations.</p>
+                        </article>
+
+                        <article class="course-card course-card-summary">
+                            <h3>8 PDH per Course</h3>
+                            <p>Professional development hours are available for each completed course, with classes held on six consecutive Saturdays.</p>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =============================== -->
+        <!-- PROGRAM TAB -->
+        <!-- =============================== -->
+
+        <div id="program"
+             class="page-view"
+             data-page="program">
+
+            <section class="content-section program">
+
+                <div class="container">
+
+                    <div class="section-heading">
+
+                        <div class="eyebrow">
+                            Industry Collaboration
                         </div>
 
+                        <h2>
+                            Collaborative Consulting Firms
+                        </h2>
 
-                        <div class="course-item">
-                            <div class="course-number">02</div>
-                            <div class="course-name">
-                                Design of Steel Bridges
+                        <div class="orange-line"></div>
+
+                    </div>
+
+
+                    <p class="program-intro">
+                        The UTA Bridge Engineering Certificate program
+                        collaborates with these consulting firms.
+                    </p>
+
+
+                    <!--
+                        LOGOS: save each logo in a "logos" folder next to this
+                        file, using the file name shown in its card below.
+                        A card shows just the firm name until its logo is added.
+                    -->
+
+                    <div class="firm-grid">
+
+                        <div class="firm-card">
+                            <div class="firm-logo">
+                                <img src="logos/bridgefarmer.png" alt="" onerror="this.parentElement.remove()">
                             </div>
+                            <div class="firm-name">Bridgefarmer and Associates, Inc.</div>
                         </div>
 
-
-                        <div class="course-item">
-                            <div class="course-number">03</div>
-                            <div class="course-name">
-                                Bridge Substructures
+                        <div class="firm-card">
+                            <div class="firm-logo">
+                                <img src="logos/tnp.png" alt="" onerror="this.parentElement.remove()">
                             </div>
+                            <div class="firm-name">Teague Nall and Perkins, Inc. (TNP)</div>
                         </div>
 
-
-                        <div class="course-item">
-                            <div class="course-number">04</div>
-                            <div class="course-name">
-                                Bridge Software
+                        <div class="firm-card">
+                            <div class="firm-logo">
+                                <img src="logos/freese-nichols.png" alt="" onerror="this.parentElement.remove()">
                             </div>
+                            <div class="firm-name">Freese &amp; Nichols</div>
                         </div>
 
-
-                        <div class="course-item">
-                            <div class="course-number">05</div>
-                            <div class="course-name">
-                                Design of Railroad Bridges
+                        <div class="firm-card">
+                            <div class="firm-logo">
+                                <img src="logos/consor.png" alt="" onerror="this.parentElement.remove()">
                             </div>
+                            <div class="firm-name">Consor Engineers</div>
                         </div>
 
-
-                        <div class="course-item">
-                            <div class="course-number">06</div>
-                            <div class="course-name">
-                                Bridge Geometry, Fit, and BIM
+                        <div class="firm-card">
+                            <div class="firm-logo">
+                                <img src="logos/hdr.png" alt="" onerror="this.parentElement.remove()">
                             </div>
+                            <div class="firm-name">HDR, Inc.</div>
                         </div>
 
-
-                        <div class="course-item">
-                            <div class="course-number">07</div>
-                            <div class="course-name">
-                                Numerical Modeling and Analysis for Bridges
+                        <div class="firm-card">
+                            <div class="firm-logo">
+                                <img src="logos/wsp.png" alt="" onerror="this.parentElement.remove()">
                             </div>
+                            <div class="firm-name">WSP</div>
                         </div>
 
-
-                        <div class="course-item">
-                            <div class="course-number">08</div>
-                            <div class="course-name">
-                                Bridge Inspection, Evaluation, and Asset Management
+                        <div class="firm-card">
+                            <div class="firm-logo">
+                                <img src="logos/halff.png" alt="" onerror="this.parentElement.remove()">
                             </div>
+                            <div class="firm-name">Halff Associates, Inc.</div>
                         </div>
 
-
-                        <div class="course-item">
-                            <div class="course-number">09</div>
-                            <div class="course-name">
-                                Bridge Constructability, Phasing, and Detailing
+                        <div class="firm-card">
+                            <div class="firm-logo">
+                                <img src="logos/aguirre-fields.png" alt="" onerror="this.parentElement.remove()">
                             </div>
-                        </div>
-
-
-                        <div class="course-item">
-                            <div class="course-number">10</div>
-                            <div class="course-name">
-                                Non-Destructive Evaluation & Structural Health Monitoring
-                            </div>
-                        </div>
-
-
-                        <div class="course-item">
-                            <div class="course-number">11</div>
-                            <div class="course-name">
-                                Complex Bridge Design
-                            </div>
+                            <div class="firm-name">Aguirre &amp; Fields</div>
                         </div>
 
                     </div>
@@ -1325,6 +1628,32 @@
         });
 
 
+        /* COURSE FILTERS */
+
+        const courseFilters = document.querySelectorAll('.course-filter');
+        const courseCards = document.querySelectorAll('.course-card[data-track]');
+
+        courseFilters.forEach(function(button) {
+
+            button.addEventListener('click', function() {
+
+                const filter = button.dataset.filter;
+
+                courseFilters.forEach(function(other) {
+                    const isActive = other === button;
+                    other.classList.toggle('active', isActive);
+                    other.setAttribute('aria-pressed', isActive);
+                });
+
+                courseCards.forEach(function(card) {
+                    card.hidden = filter !== 'all' && card.dataset.track !== filter;
+                });
+
+            });
+
+        });
+
+
         /* OPEN CORRECT TAB FROM URL */
 
         const initialHash = window.location.hash.replace('#', '');
@@ -1336,6 +1665,10 @@
         } else if (initialHash === 'faculty') {
 
             showPage('faculty');
+
+        } else if (initialHash === 'program') {
+
+            showPage('program');
 
         } else if (initialHash === 'schedule') {
 
