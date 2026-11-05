@@ -535,15 +535,33 @@
 
         .faculty-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
         }
 
         .faculty-card {
             border: 1px solid var(--border);
             background-color: white;
-            padding: 30px;
             border-top: 4px solid var(--orange);
+        }
+
+        .faculty-photo {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            object-position: center top;
+            background-color: var(--light-gray);
+        }
+
+        .faculty-info {
+            padding: 24px;
+        }
+
+        .faculty-bio {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #555;
         }
 
         .faculty-card h3 {
@@ -768,7 +786,7 @@
             }
 
             .faculty-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .course-grid {
@@ -806,6 +824,10 @@
             }
 
             .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faculty-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1482,16 +1504,43 @@
                     </p>
 
 
-                    <!--
-                        FACULTY GO HERE
+                    <div class="faculty-grid">
 
-                        Once you have the faculty names, you can replace
-                        this placeholder with faculty cards.
-                    -->
+                        <article class="faculty-card">
+                            <img class="faculty-photo" src="faculty/yazdani.jpg" alt="Dr. Nur Yazdani, P.E.">
+                            <div class="faculty-info">
+                                <h3>Dr. Nur Yazdani, P.E.</h3>
+                                <div class="faculty-title">Professor</div>
+                                <p class="faculty-bio">Dr. Yazdani specializes in structures and applied mechanics. Ph.D., University of Maryland.</p>
+                            </div>
+                        </article>
 
-                    <div class="faculty-placeholder">
+                        <article class="faculty-card">
+                            <img class="faculty-photo" src="faculty/chao.jpg" alt="Dr. Shih-Ho Chao, P.E.">
+                            <div class="faculty-info">
+                                <h3>Dr. Shih-Ho Chao, P.E.</h3>
+                                <div class="faculty-title">ACPA Tom Wheelan Endowed Professor and Area Coordinator</div>
+                                <p class="faculty-bio">Dr. Chao specializes in structures and applied mechanics. Ph.D., University of Michigan.</p>
+                            </div>
+                        </article>
 
-                        Faculty profiles will be added here.
+                        <article class="faculty-card">
+                            <img class="faculty-photo" src="faculty/beneberu.jpg" alt="Dr. Eyosias Beneberu">
+                            <div class="faculty-info">
+                                <h3>Dr. Eyosias Beneberu</h3>
+                                <div class="faculty-title">Professor of Research</div>
+                                <p class="faculty-bio">Dr. Beneberu is a member of the research faculty in the Department of Civil Engineering.</p>
+                            </div>
+                        </article>
+
+                        <article class="faculty-card">
+                            <img class="faculty-photo" src="faculty/jalali.jpg" alt="Dr. Himan Hojat Jalali">
+                            <div class="faculty-info">
+                                <h3>Dr. Himan Hojat Jalali</h3>
+                                <div class="faculty-title">Assistant Professor</div>
+                                <p class="faculty-bio">Dr. Jalali specializes in structures and applied mechanics. Ph.D., Sharif University of Technology.</p>
+                            </div>
+                        </article>
 
                     </div>
 
